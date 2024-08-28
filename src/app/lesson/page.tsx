@@ -20,6 +20,7 @@ import { QuestionProps } from "@/type";
 import { Dialog, DialogContent } from "@/components/ui/dialog";
 import { TiTick } from "react-icons/ti";
 import { toast } from "sonner";
+import SparklesText from "@/components/magicui/sparkles-text";
 
 interface QuestionCardProps extends QuestionProps {
   onAnswerSelect: (answer: string) => void;
@@ -114,24 +115,63 @@ const QuestionCard: React.FC<QuestionCardProps> = ({
       </div>
 
       <div className="mt-8 space-y-4">
-        {answer.map((answerItem: any) => (
-          <button
-            key={answerItem.text}
-            onClick={() => handleSelectAnswer(answerItem.text)}
-            disabled={isAnswerChecked}
-            className={`flex w-full translate-y-[2px] cursor-pointer items-center gap-5 rounded-xl border-2 border-b-[4.5px] border-gray-500/60 bg-transparent p-4 px-6 text-center text-base font-medium transition-all duration-200 ease-in-out active:translate-y-[6px] active:shadow-none ${
-              selectedAnswer === answerItem.text
-                ? isAnswerChecked
-                  ? answerItem.isCorrect
-                    ? "border-green-500 bg-green-100 text-green-500 shadow-[0_4px_0_#6EE7B7]"
-                    : "border-red-500 bg-red-100 text-red-500 shadow-[0_4px_0_#F87171]"
-                  : "border-mediumBlue bg-mediumBlue/10 text-mediumBlue shadow-[0_4px_0_#3B82F6A6]"
-                : "text-zinc-200 shadow-[0_4px_0_#4f535c] hover:bg-[#4f535c]"
-            } ${isAnswerChecked ? "cursor-not-allowed opacity-50" : ""}`}
-          >
-            {answerItem.text}
-          </button>
-        ))}
+        {answer.map((answerItem: any) =>
+          // <button
+          //   key={answerItem.text}
+          //   onClick={() => handleSelectAnswer(answerItem.text)}
+          //   disabled={isAnswerChecked}
+          //   className={`flex w-full translate-y-[2px] cursor-pointer items-center gap-5 rounded-xl border-2 border-b-[4.5px] border-gray-500/60 bg-transparent p-4 px-6 text-center text-base font-medium transition-all duration-200 ease-in-out active:translate-y-[6px] active:shadow-none ${
+          //     selectedAnswer === answerItem.text
+          //       ? isAnswerChecked
+          //         ? answerItem.isCorrect
+          //           ? "border-green-500 bg-green-100 text-green-500 shadow-[0_4px_0_#6EE7B7]"
+          //           : "border-red-500 bg-red-100 text-red-500 shadow-[0_4px_0_#F87171]"
+          //         : "border-mediumBlue bg-mediumBlue/10 text-mediumBlue shadow-[0_4px_0_#3B82F6A6]"
+          //       : "text-zinc-200 shadow-[0_4px_0_#4f535c] hover:bg-[#4f535c]"
+          //   } ${isAnswerChecked ? "cursor-not-allowed opacity-50" : ""}`}
+          // >
+          //   {answerItem.text}
+          // </button>
+
+          selectedAnswer === answerItem.text &&
+          answerItem.isCorrect &&
+          isAnswerChecked &&
+          isAnswerCorrect ? (
+            <SparklesText sparklesCount={6} key={answerItem.text}>
+              <button
+                key={answerItem.text}
+                onClick={() => handleSelectAnswer(answerItem.text)}
+                disabled={isAnswerChecked}
+                className={`flex w-full translate-y-[2px] cursor-pointer items-center gap-5 rounded-xl border-2 border-b-[4.5px] border-gray-500/60 bg-transparent p-4 px-6 text-center text-base font-medium transition-all duration-200 ease-in-out active:translate-y-[6px] active:shadow-none ${
+                  selectedAnswer === answerItem.text
+                    ? isAnswerChecked
+                      ? answerItem.isCorrect &&
+                        "border-green-500 bg-green-100 text-green-500 shadow-[0_2px_0_#6EE7B7]"
+                      : "border-mediumBlue bg-mediumBlue/10 text-mediumBlue shadow-[0_2px_0_#3B82F6A6]"
+                    : "text-zinc-200 shadow-[0_2px_0_#4f535c] hover:bg-[#4f535c]"
+                } ${isAnswerChecked ? "cursor-not-allowed opacity-50" : ""}`}
+              >
+                {answerItem.text}
+              </button>
+            </SparklesText>
+          ) : (
+            <button
+              key={answerItem.text}
+              onClick={() => handleSelectAnswer(answerItem.text)}
+              disabled={isAnswerChecked}
+              className={`flex w-full translate-y-[2px] cursor-pointer items-center gap-5 rounded-xl border-2 border-b-[4.5px] border-gray-500/60 bg-transparent p-4 px-6 text-center text-base font-medium transition-all duration-200 ease-in-out active:translate-y-[6px] active:shadow-none ${
+                selectedAnswer === answerItem.text
+                  ? isAnswerChecked
+                    ? !answerItem.isCorrect &&
+                      "border-red-500 bg-red-100 text-red-500 shadow-[0_2px_0_#F87171]"
+                    : "border-mediumBlue bg-mediumBlue/10 text-mediumBlue shadow-[0_2px_0_#3B82F6A6]"
+                  : "text-zinc-200 shadow-[0_2px_0_#4f535c] hover:bg-[#4f535c]"
+              } ${isAnswerChecked ? "cursor-not-allowed opacity-50" : ""}`}
+            >
+              {answerItem.text}
+            </button>
+          ),
+        )}
       </div>
     </div>
   );

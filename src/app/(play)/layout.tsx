@@ -17,23 +17,20 @@ export default function RootLayout({
   const param = useSearchParams();
 
   return (
-    <html lang="en">
-      {" "}
-      <body
-        className={cn(
-          "min-h-screen scroll-smooth bg-background font-sans antialiased",
-          DINRoundProMedi.className,
-        )}
-      >
-        {param.get("isLoggingIn") === "true" ? (
-          <Login />
-        ) : (
-          <div className="lg::grid-cols-[220px_1fr] grid min-h-screen w-full bg-background lg:grid-cols-[280px_1fr]">
-            <SideBarNav />
-            {children}
-          </div>
-        )}
-      </body>
-    </html>
+    <div
+      className={cn(
+        "min-h-screen scroll-smooth bg-background font-sans antialiased",
+        DINRoundProMedi.className,
+      )}
+    >
+      {param.get("isLoggingIn") === "true" ? (
+        <Login />
+      ) : (
+        <div className="lg::grid-cols-[220px_1fr] grid min-h-screen w-full bg-background lg:grid-cols-[280px_1fr]">
+          <SideBarNav />
+          {children}
+        </div>
+      )}
+    </div>
   );
 }
