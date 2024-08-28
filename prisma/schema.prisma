@@ -1,0 +1,93 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id        String   @id @default(uuid()) @db.Uuid
+  name      String
+  email     String   @unique
+  avatar    String?
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([email])
+  @@index([createdAt])
+}
+
+model Lesson {
+  id String @id @default(uuid()) @db.Uuid
+
+  questions  Question[]
+  nextLesson String     @default(uuid()) @db.Uuid
+
+  @@index([nextLesson])
+}
+
+model Question {
+  id          String   @id @default(uuid()) @db.Uuid
+  question    String
+  description String
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+  answers     Answer[]
+  lesson      Lesson?  @relation(fields: [lessonId], references: [id])
+  lessonId    String?  @db.Uuid
+
+  @@index([question])
+  @@index([createdAt])
+  @@index([lessonId])
+}
+
+model Answer {
+  id         String   @id @default(uuid()) @db.Uuid
+  text       String
+  isCorrect  Boolean
+  questionId String   @db.Uuid
+  question   Question @relation(fields: [questionId], references: [id], onDelete: Cascade)
+  createdAt  DateTime @default(now())
+  updatedAt  DateTime @updatedAt
+
+  @@index([isCorrect])
+  @@index([questionId])
+}
+
+enum EDailyGoalTime {
+  FIVE_MIN_DAY
+  TEN_MIN_DAY
+  FIFTEEN_MIN_DAY
+  TWENTY_MIN_DAY
+}
+
+enum EDailyGoalTitles {
+  CASUAL
+  REGULAR
+  SERIOUS
+  INTENSE
+}
+
+enum EState {
+  LEARNING_REASON
+  PROFICIENCY
+  COURSEOVERVIEW
+  DAILYGOAL
+  CHOOSEPATH
+}
+
+enum EProficiency {
+  BEGINNER
+  ELEMENTARY
+  INTERMEDIATE
+  ADVANCED
+  NATIVE
+}
