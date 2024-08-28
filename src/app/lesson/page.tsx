@@ -236,6 +236,8 @@ const Lesson = () => {
     }
   };
 
+  console.log("currentQuestionIndex", currentQuestionIndex);
+
   const handleSkipQuestion = () => {
     if (currentQuestionIndex < Questions.length - 1) {
       const nextIndex = currentQuestionIndex + 1;
