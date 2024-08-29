@@ -112,11 +112,8 @@ const WelcomeContent: React.FC = () => {
         console.log(nextState);
       } else if (welcomeState === EState.DAILYGOAL) {
         setShowLoading(true); // Show loading spinner
-        setTimeout(() => {
-          setIsCompleted(true);
-          if (!isCompleted) return;
-          router.push("/learn");
-        }, 2000); // Simulating a delay for loading
+        setIsCompleted(true);
+        router.push("/learn");
       }
     }
 

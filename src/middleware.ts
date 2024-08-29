@@ -8,13 +8,13 @@ const secret = process.env.NEXTAUTH_SECRET;
 
 export async function middleware(req: NextRequest) {
     const token = await getToken({ req, secret });
-    const nextAuthSessionToken = getCookie("next-auth.session-token", { cookies })
-    const nextAuthCsrfToken = getCookie("next-auth.csrf-token", { cookies })
-    const isLoggedIn = getCookie("loggedIn", { cookies })
+    // const nextAuthSessionToken = getCookie("next-auth.session-token", { cookies })
+    // const nextAuthCsrfToken = getCookie("next-auth.csrf-token", { cookies })
+    // const isLoggedIn = getCookie("loggedIn", { cookies })
 
-    if (!isLoggedIn || !nextAuthSessionToken || !nextAuthCsrfToken) {
-        return NextResponse.redirect(new URL("/", req.url));
-    }
+    // if (!isLoggedIn || !nextAuthSessionToken || !nextAuthCsrfToken) {
+    //     return NextResponse.redirect(new URL("/", req.url));
+    // }
 
     return NextResponse.next();
 }
