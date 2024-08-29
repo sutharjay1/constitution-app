@@ -1,7 +1,7 @@
 import { v4 as uuidv4 } from "uuid";
 import { QuestionProps } from "@/type";
 
-export const Questions: QuestionProps[] = [
+export const Questions: any = [
     {
         "id": uuidv4(),
         "question": "Who is known as the Father of the Indian Constitution?",
