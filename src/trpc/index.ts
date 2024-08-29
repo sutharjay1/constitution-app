@@ -1,6 +1,7 @@
 import { TRPCError } from "@trpc/server";
 import { privateProcedure, publicProcedure, router } from "./trpc";
 import db from "@/db";
+import { z } from "zod";
 
 
 export const appRouter = router({
@@ -55,7 +56,17 @@ export const appRouter = router({
             throw new TRPCError({ code: "INTERNAL_SERVER_ERROR" });
         }
     }),
+    getLesson: publicProcedure.query(async ({ ctx }) => {
+        const lessons = await db.lesson.findFirst()
+        return { lesson: lessons }
+    }),
+    getLessonById: publicProcedure.input(z.object({ id: z.string() })).query(async ({ ctx, input }) => {
+        const lessonId = await db.lesson.findFirst({ where: { id: input.id } })
 
+        const question = await db.question.findMany({ where: { lessonId: input.id }, include: { answers: true } })
+
+        return { question: question }
+    }),
 })
 
 export type AppRouter = typeof appRouter

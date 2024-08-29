@@ -1,40 +1,46 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
-import { useRouter, useSearchParams } from "next/navigation";
-import { useHeart } from "@/hooks/useHeart";
-import { Questions } from "@/config/question";
-import { cn } from "@/lib/utils";
+import GameButton from "@/components/Button/GameButton";
+import Heading from "@/components/Heading";
+import SparklesText from "@/components/magicui/sparkles-text";
+import { Dialog, DialogContent } from "@/components/ui/dialog";
+import { Progress } from "@/components/ui/progress";
 import {
   DINRoundProBold,
   DINRoundProLight,
   DINRoundProMedi,
 } from "@/config/font";
-import { Check, Volume2 } from "lucide-react";
-import { IoClose } from "react-icons/io5";
-import Image from "next/image";
-import GameButton from "@/components/Button/GameButton";
-import Heading from "@/components/Heading";
-import { Progress } from "@/components/ui/progress";
+import { useHeart } from "@/hooks/useHeart";
+import { cn } from "@/lib/utils";
+import { trpc } from "@/trpc/client";
 import { QuestionProps } from "@/type";
-import { Dialog, DialogContent } from "@/components/ui/dialog";
-import { TiTick } from "react-icons/ti";
+import { setCookie } from "cookies-next";
+import { Check, Volume2 } from "lucide-react";
+import Image from "next/image";
+import { useRouter, useSearchParams } from "next/navigation";
+import React, { useEffect, useState } from "react";
+import { IoClose } from "react-icons/io5";
 import { toast } from "sonner";
-import SparklesText from "@/components/magicui/sparkles-text";
 
 interface QuestionCardProps extends QuestionProps {
   onAnswerSelect: (answer: string) => void;
   selectedAnswer: string | null;
   isAnswerChecked: boolean;
   isAnswerCorrect: boolean | null;
+  answers: {
+    id: string;
+    text: string;
+    isCorrect: boolean;
+    questionId: string;
+    createdAt: string;
+    updatedAt: string;
+  }[];
 }
-
-console.log(Questions.length);
 
 const QuestionCard: React.FC<QuestionCardProps> = ({
   question,
   description,
-  answer,
+  answers,
   onAnswerSelect,
   selectedAnswer,
   isAnswerChecked,
@@ -115,7 +121,7 @@ const QuestionCard: React.FC<QuestionCardProps> = ({
       </div>
 
       <div className="mt-8 space-y-4">
-        {answer.map((answerItem: any) =>
+        {answers.map((answerItem: any) =>
           // <button
           //   key={answerItem.text}
           //   onClick={() => handleSelectAnswer(answerItem.text)}
@@ -177,11 +183,25 @@ const QuestionCard: React.FC<QuestionCardProps> = ({
   );
 };
 
-const Lesson = () => {
+interface LessonProps {
+  params: {
+    lessonId: string;
+  };
+}
+
+const Lesson = ({ params }: LessonProps) => {
   const [progress, setProgress] = useState(0);
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
   const router = useRouter();
   const { heart, setHeart } = useHeart();
+
+  const { lessonId } = params;
+
+  const { data: lesson } = trpc.getLessonById.useQuery({
+    id: lessonId as string,
+  });
+
+  console.log(JSON.stringify(lesson));
 
   const searchParams = useSearchParams();
   const questionParam = searchParams.get("q");
@@ -190,7 +210,7 @@ const Lesson = () => {
   const [isAnswerChecked, setIsAnswerChecked] = useState<boolean>(false);
   const [isAnswerCorrect, setIsAnswerCorrect] = useState<boolean | null>(null);
 
-  const currentQuestion = Questions[currentQuestionIndex];
+  const currentQuestion = lesson?.question[currentQuestionIndex];
 
   const handleSelectAnswer = (answer: string) => {
     if (!isAnswerChecked) {
@@ -201,9 +221,9 @@ const Lesson = () => {
   useEffect(() => {
     if (questionParam) {
       const index = parseInt(questionParam);
-      if (!isNaN(index) && index >= 0 && index < Questions.length) {
+      if (!isNaN(index) && index >= 0 && index < lesson?.question?.length!) {
         setCurrentQuestionIndex(index - 1);
-        setProgress(((index + 1) / Questions.length) * 100);
+        setProgress(((index + 1) / lesson?.question?.length!) * 100);
       }
     }
   }, [questionParam, setCurrentQuestionIndex, setProgress]);
@@ -233,23 +253,25 @@ const Lesson = () => {
     }
 
     if (!isAnswerChecked) {
-      const correctAnswer = currentQuestion.answer.find(
+      const correctAnswer = currentQuestion?.answers.find(
         (answer) => answer.isCorrect,
       );
       const isCorrect = correctAnswer && correctAnswer.text === selectedAnswer;
       setIsAnswerCorrect(isCorrect as boolean);
       setIsAnswerChecked(true);
-      setProgress(((currentQuestionIndex + 1) / Questions.length) * 100);
+      setProgress(
+        ((currentQuestionIndex + 1) / lesson?.question.length!) * 100,
+      );
 
       if (!isCorrect) {
         setHeart(heart - 1);
       }
     } else {
-      if (currentQuestionIndex < Questions.length - 1) {
+      if (currentQuestionIndex < lesson?.question.length! - 1) {
         const nextIndex = currentQuestionIndex + 2;
         setCurrentQuestionIndex(currentQuestionIndex + 1);
-        router.push(`/lesson?q=${nextIndex}`);
-        setProgress((nextIndex / Questions.length) * 100);
+        router.push(`/lesson/${lessonId}?q=${nextIndex}`);
+        setProgress((nextIndex / lesson?.question.length!) * 100);
         setSelectedAnswer(null);
         setIsAnswerCorrect(null);
         setIsAnswerChecked(false);
@@ -272,6 +294,10 @@ const Lesson = () => {
             },
           },
         );
+
+        //
+
+        setCookie("lesson", "lesson_1");
       }
     }
   };
@@ -279,11 +305,11 @@ const Lesson = () => {
   console.log("currentQuestionIndex", currentQuestionIndex);
 
   const handleSkipQuestion = () => {
-    if (currentQuestionIndex < Questions.length - 1) {
+    if (currentQuestionIndex < lesson?.question.length! - 1) {
       const nextIndex = currentQuestionIndex + 1;
       setCurrentQuestionIndex(nextIndex);
-      router.push(`/lesson?q=${nextIndex}`);
-      setProgress(((nextIndex + 1) / Questions.length) * 100);
+      router.push(`/lesson/${lessonId}?q=${nextIndex}`);
+      setProgress(((nextIndex + 1) / lesson?.question.length!) * 100);
       setSelectedAnswer(null);
       setIsAnswerCorrect(null);
       setIsAnswerChecked(false);
@@ -333,6 +359,7 @@ const Lesson = () => {
               {currentQuestion && (
                 <QuestionCard
                   {...currentQuestion}
+                  answers={currentQuestion.answers}
                   onAnswerSelect={handleSelectAnswer}
                   selectedAnswer={selectedAnswer}
                   isAnswerChecked={isAnswerChecked}

@@ -35,6 +35,9 @@ import {
   DialogTrigger,
 } from "@/components/ui/dialog";
 import { signOut, useSession } from "next-auth/react";
+import { getCookie } from "cookies-next";
+import { cookies } from "next/headers";
+import { trpc } from "@/trpc/client";
 
 const HoverCard = ({ text, top }: { text: string; top?: string }) => (
   <motion.div
@@ -72,6 +75,8 @@ const Learn = () => {
     [key: string]: { top: string };
   }>({});
 
+  const lessonId = getCookie("lesson_1");
+
   const { heart } = useHeart();
   const { gems } = useGems();
 
@@ -107,6 +112,10 @@ const Learn = () => {
   };
 
   const { data, status } = useSession();
+
+  const { data: lesson } = trpc.getLesson.useQuery();
+
+  console.log(JSON.stringify(lesson, null, 2));
 
   return (
     <div className="min-h-screen w-full bg-background p-4 sm:p-6 md:p-8 lg:p-10">
@@ -197,7 +206,9 @@ const Learn = () => {
                         </Heading>
                         <GameButton
                           className="mt-3 flex w-full items-center justify-center rounded-2xl py-2.5"
-                          onClick={() => router.push("/lesson?q=1")}
+                          onClick={() =>
+                            router.push(`/lesson/${lesson?.lesson?.id}/?q=1`)
+                          }
                           variant="white"
                         >
                           <Heading

@@ -86,5 +86,5 @@ export interface QuestionProps {
     id: string;
     question: string;
     description: string;
-    answer: AnswerProp[];
+    answers: AnswerProp[];
 }
