@@ -8,7 +8,7 @@ export const Question2: QuestionProps[] = [
       "Which leader is credited with the drafting of the Indian Constitution?",
     description:
       "Identify the primary figure responsible for drafting the Indian Constitution.",
-    answer: [
+    answers: [
       {
         text: "Dr. B.R. Ambedkar",
         isCorrect: true,
@@ -25,7 +25,7 @@ export const Question2: QuestionProps[] = [
       "Where can you find the provisions for Fundamental Rights in the Indian Constitution?",
     description:
       "Identify the section of the Indian Constitution that contains Fundamental Rights.",
-    answer: [
+    answers: [
       {
         text: "Part III",
         isCorrect: true,
@@ -45,7 +45,7 @@ export const Question2: QuestionProps[] = [
     question:
       "Which right is guaranteed under Article 21 of the Indian Constitution?",
     description: "Identify the right guaranteed by Article 21.",
-    answer: [
+    answers: [
       {
         text: "Right to Life and Personal Liberty",
         isCorrect: true,
@@ -61,7 +61,7 @@ export const Question2: QuestionProps[] = [
     question: "How many schedules are included in the Indian Constitution?",
     description:
       "Determine the number of schedules in the Indian Constitution.",
-    answer: [
+    answers: [
       {
         text: "12",
         isCorrect: true,
@@ -85,7 +85,7 @@ export const Question2: QuestionProps[] = [
     question:
       "Which Article of the Indian Constitution addresses discrimination based on religion, race, caste, sex, or place of birth?",
     description: "Identify the Article that prohibits discrimination.",
-    answer: [
+    answers: [
       {
         text: "Article 15",
         isCorrect: true,
@@ -101,7 +101,7 @@ export const Question2: QuestionProps[] = [
     question: "Which amendment is referred to as the 'Mini Constitution'?",
     description:
       "Identify the amendment known for its significant impact on the Indian Constitution.",
-    answer: [
+    answers: [
       {
         text: "42nd Amendment",
         isCorrect: true,
@@ -117,7 +117,7 @@ export const Question2: QuestionProps[] = [
     question:
       "Which Article of the Indian Constitution abolishes untouchability?",
     description: "Identify the Article that addresses untouchability.",
-    answer: [
+    answers: [
       {
         text: "Article 17",
         isCorrect: true,
@@ -138,7 +138,7 @@ export const Question2: QuestionProps[] = [
       "Who is entrusted with the responsibility of safeguarding the Indian Constitution?",
     description:
       "Identify the entity responsible for the protection of the Constitution.",
-    answer: [
+    answers: [
       {
         text: "The Supreme Court of India",
         isCorrect: true,
@@ -154,7 +154,7 @@ export const Question2: QuestionProps[] = [
     question:
       "Which part of the Indian Constitution covers the Directive Principles of State Policy?",
     description: "Identify the section related to the Directive Principles.",
-    answer: [
+    answers: [
       {
         text: "Part IV",
         isCorrect: true,
@@ -173,7 +173,7 @@ export const Question2: QuestionProps[] = [
     id: uuidv4(),
     question: "In which year was the Indian Constitution officially adopted?",
     description: "Determine the year of adoption for the Indian Constitution.",
-    answer: [
+    answers: [
       {
         text: "1950",
         isCorrect: true,
@@ -192,7 +192,7 @@ export const Question2: QuestionProps[] = [
     id: uuidv4(),
     question: "What is provided by Article 32 of the Indian Constitution?",
     description: "Identify the right or provision related to Article 32.",
-    answer: [
+    answers: [
       {
         text: "Right to Constitutional Remedies",
         isCorrect: true,
@@ -209,7 +209,7 @@ export const Question2: QuestionProps[] = [
       "Which part of the Indian Constitution is compared to the 'Magna Carta'?",
     description:
       "Identify the part of the Constitution referred to as the 'Magna Carta'.",
-    answer: [
+    answers: [
       {
         text: "Part III (Fundamental Rights)",
         isCorrect: true,
@@ -225,7 +225,7 @@ export const Question2: QuestionProps[] = [
     question:
       "Which Article provides for the formation of the Finance Commission?",
     description: "Identify the Article related to the Finance Commission.",
-    answer: [
+    answers: [
       {
         text: "Article 280",
         isCorrect: true,
@@ -241,7 +241,7 @@ export const Question2: QuestionProps[] = [
     question: "Which Article ensures the right to education in India?",
     description:
       "Identify the Article that provides for the right to education.",
-    answer: [
+    answers: [
       {
         text: "Article 21A",
         isCorrect: true,
@@ -262,7 +262,7 @@ export const Question2: QuestionProps[] = [
       "Which part of the Indian Constitution defines the Union and its territories?",
     description:
       "Identify the part of the Constitution that defines the Union and its territories.",
-    answer: [
+    answers: [
       {
         text: "Part I",
         isCorrect: true,
