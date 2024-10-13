@@ -1,0 +1,190 @@
+[
+  {
+    "lesson": {
+      "id": "c3f20f6e-7d89-47b0-b0b6-2ed546080cdd",
+      "nextLesson": "cbc1dced-5cc7-49e1-b877-eae22c820ad0"
+    },
+    "questions": [
+      {
+        "question": "Who is considered the \"Father of the Indian Constitution\"?",
+        "description": "This question is about the key figure in the drafting of the Indian Constitution.",
+        "answers": [
+          {
+            "text": "Mahatma Gandhi",
+            "isCorrect": false
+          },
+          {
+            "text": "Dr. B.R. Ambedkar",
+            "isCorrect": true
+          },
+          {
+            "text": "Jawaharlal Nehru",
+            "isCorrect": false
+          }
+        ]
+      },
+      {
+        "question": "When was the Constitution of India adopted?",
+        "description": "This question is about the date of adoption of the Indian Constitution.",
+        "answers": [
+          {
+            "text": "26 January 1950",
+            "isCorrect": false
+          },
+          {
+            "text": "15 August 1947",
+            "isCorrect": false
+          },
+          {
+            "text": "26 November 1949",
+            "isCorrect": true
+          }
+        ]
+      },
+      {
+        "question": "On which date did the Constitution of India come into effect?",
+        "description": "This question is about the date when the Indian Constitution became effective.",
+        "answers": [
+          {
+            "text": "26 November 1949",
+            "isCorrect": false
+          },
+          {
+            "text": "26 January 1950",
+            "isCorrect": true
+          },
+          {
+            "text": "15 August 1947",
+            "isCorrect": false
+          }
+        ]
+      },
+      {
+        "question": "The Preamble to the Constitution begins with which words?",
+        "description": "This question is about the opening words of the Preamble to the Indian Constitution.",
+        "answers": [
+          {
+            "text": "We the People",
+            "isCorrect": true
+          },
+          {
+            "text": "In God We Trust",
+            "isCorrect": false
+          },
+          {
+            "text": "India is One",
+            "isCorrect": false
+          }
+        ]
+      },
+      {
+        "question": "Who was the chairman of the drafting committee of the Indian Constitution?",
+        "description": "This question is about the leadership of the committee that drafted the Indian Constitution.",
+        "answers": [
+          {
+            "text": "Sardar Patel",
+            "isCorrect": false
+          },
+          {
+            "text": "Dr. B.R. Ambedkar",
+            "isCorrect": true
+          },
+          {
+            "text": "Jawaharlal Nehru",
+            "isCorrect": false
+          }
+        ]
+      },
+      {
+        "question": "What is the term used for the introduction to the Constitution of India?",
+        "description": "This question is about the formal name given to the introductory statement of the Indian Constitution.",
+        "answers": [
+          {
+            "text": "Preamble",
+            "isCorrect": true
+          },
+          {
+            "text": "Foreword",
+            "isCorrect": false
+          },
+          {
+            "text": "Introduction",
+            "isCorrect": false
+          }
+        ]
+      },
+      {
+        "question": "Who was the first President of India?",
+        "description": "This question is about the first person to hold the office of President in independent India.",
+        "answers": [
+          {
+            "text": "Dr. Rajendra Prasad",
+            "isCorrect": true
+          },
+          {
+            "text": "Jawaharlal Nehru",
+            "isCorrect": false
+          },
+          {
+            "text": "Sardar Patel",
+            "isCorrect": false
+          }
+        ]
+      },
+      {
+        "question": "Who was the first Prime Minister of independent India?",
+        "description": "This question is about the first person to hold the office of Prime Minister in independent India.",
+        "answers": [
+          {
+            "text": "Dr. Rajendra Prasad",
+            "isCorrect": false
+          },
+          {
+            "text": "Sardar Patel",
+            "isCorrect": false
+          },
+          {
+            "text": "Jawaharlal Nehru",
+            "isCorrect": true
+          }
+        ]
+      },
+      {
+        "question": "The Constitution of India was originally written in which language?",
+        "description": "This question is about the original language in which the Indian Constitution was drafted.",
+        "answers": [
+          {
+            "text": "Hindi",
+            "isCorrect": false
+          },
+          {
+            "text": "English",
+            "isCorrect": true
+          },
+          {
+            "text": "Sanskrit",
+            "isCorrect": false
+          }
+        ]
+      },
+      {
+        "question": "What does the Constitution of India describe India as in its Preamble?",
+        "description": "This question is about how India is characterized in the Preamble of its Constitution.",
+        "answers": [
+          {
+            "text": "Sovereign, Socialist, Secular, Democratic Republic",
+            "isCorrect": true
+          },
+          {
+            "text": "Federal, Democratic Republic",
+            "isCorrect": false
+          },
+          {
+            "text": "Secular, Federal, Socialist Republic",
+            "isCorrect": false
+          }
+        ]
+      }
+    ]
+  }
+]

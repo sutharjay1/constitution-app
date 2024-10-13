@@ -27,6 +27,6 @@
     "**/*.tsx",
     ".next/types/**/*.ts",
     "src/script.js"
-  ],
+, "src/db/seed.js"  ],
   "exclude": ["node_modules"]
 }

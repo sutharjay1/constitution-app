@@ -71,6 +71,7 @@ const Learn = () => {
   const [streak, setStreak] = useState(0);
   const [isStartClicked, setIsStartClicked] = useState(false);
   const [chapter2Clicked, setChapter2Clicked] = useState(false);
+  const [chapter3Clicked, setChapter3Clicked] = useState(false);
   const [hoveredItem, setHoveredItem] = useState<string | null>(null);
   const [hoverCardPosition, setHoverCardPosition] = useState<{
     [key: string]: { top: string };
@@ -96,6 +97,10 @@ const Learn = () => {
 
   const handleGameButton2 = () => {
     setChapter2Clicked(!chapter2Clicked);
+  };
+
+  const handleGameButton3 = () => {
+    setChapter3Clicked(!chapter3Clicked);
   };
 
   const handleMouseEnter = (
@@ -158,6 +163,8 @@ const Learn = () => {
               </div>
               <div className="flex flex-col items-center justify-center">
                 <div className="perspective-3d w-full active:-translate-y-0">
+                  {/* Easy Button */}
+
                   <div className="flex w-full flex-col items-center justify-center -space-y-4 border-t-[1.8px] border-zinc-500 bg-background py-12">
                     <motion.div
                       animate={{ y: [0, -10, 0] }}
@@ -169,7 +176,7 @@ const Learn = () => {
                       className="relative z-20 mx-auto flex w-fit items-center justify-center rounded-lg border-2 border-zinc-600 bg-background px-4 py-2"
                     >
                       <Heading className="text-2xl uppercase text-mediumBlue sm:text-2xl">
-                        Chapter 1
+                        Easy
                       </Heading>
                     </motion.div>
 
@@ -200,7 +207,7 @@ const Learn = () => {
                         className="relative z-50 mx-auto flex w-80 flex-col items-start justify-start rounded-2xl bg-mediumBlue px-4 py-4 pb-5 text-left"
                       >
                         <Heading className="text-left text-base uppercase text-mediumBlue text-zinc-50 sm:text-lg">
-                          Discuss traveling solo
+                          Let's start with the basics
                         </Heading>{" "}
                         <Heading
                           className={cn(
@@ -213,7 +220,9 @@ const Learn = () => {
                         <GameButton
                           className="mt-3 flex w-full items-center justify-center rounded-2xl py-2.5"
                           onClick={() =>
-                            router.push(`/lesson/${lesson?.lesson?.id}/?q=1`)
+                            router.push(
+                              `/lesson/c3f20f6e-7d89-47b0-b0b6-2ed546080cdd/?q=1`,
+                            )
                           }
                           variant="white"
                         >
@@ -228,21 +237,39 @@ const Learn = () => {
                         </GameButton>
                       </motion.div>
                     )}
+                  </div>
+
+                  {/* Medium Button */}
+                  <div className="flex w-full flex-col items-center justify-center -space-y-4 border-zinc-500 bg-background">
+                    <motion.div
+                      animate={{ y: [0, -10, 0] }}
+                      transition={{
+                        duration: 1.8,
+                        repeat: Infinity,
+                        ease: "easeInOut",
+                      }}
+                      className="relative z-20 mx-auto flex w-fit items-center justify-center rounded-lg border-2 border-zinc-600 bg-background px-4 py-2"
+                    >
+                      <Heading className="text-2xl uppercase text-mediumBlue sm:text-2xl">
+                        Medium
+                      </Heading>
+                    </motion.div>
 
                     <div className="z-0 mx-auto flex w-full max-w-7xl items-center justify-center perspective-800">
-                      <div className="mr-20 mt-7 flex w-fit items-center justify-center gap-3 rounded-2xl p-3 rotate-x-45">
+                      {/* <div className="flex w-fit items-center justify-center gap-3 rounded-2xl border-4 border-zinc-500/50 p-3 rotate-x-45"> */}
+                      <div className="flex w-fit items-center justify-center gap-3 rounded-2xl p-3 rotate-x-45">
                         <GameButton
-                          className="w-fit rounded-2xl"
+                          className="w-fit"
                           onClick={() => handleGameButton2()}
-                          // disable
                         >
                           <Star
-                            className="h-10 w-10 rounded-full text-zinc-500"
+                            className="h-10 w-10 rounded-full text-zinc-300"
                             color="#D4D4D8"
                           />
                         </GameButton>
                       </div>
                     </div>
+
                     {chapter2Clicked && (
                       <motion.div
                         initial={{ y: 40, opacity: 0 }}
@@ -255,7 +282,7 @@ const Learn = () => {
                         className="relative z-50 mx-auto flex w-80 flex-col items-start justify-start rounded-2xl bg-mediumBlue px-4 py-4 pb-5 text-left"
                       >
                         <Heading className="text-left text-base uppercase text-mediumBlue text-zinc-50 sm:text-lg">
-                          Discuss traveling solo
+                          Let's increase the difficulty
                         </Heading>{" "}
                         <Heading
                           className={cn(
@@ -267,7 +294,86 @@ const Learn = () => {
                         </Heading>
                         <GameButton
                           className="mt-3 flex w-full items-center justify-center rounded-2xl py-2.5"
-                          onClick={() => router.push(`/lesson/preamble`)}
+                          onClick={() =>
+                            router.push(
+                              `/lesson/cbc1dced-5cc7-49e1-b877-eae22c820ad0?q=1`,
+                            )
+                          }
+                          variant="white"
+                        >
+                          <Heading
+                            className={cn(
+                              "text-left text-sm font-bold uppercase text-mediumBlue sm:text-base",
+                              DINRoundProMedi.className,
+                            )}
+                          >
+                            Start at +10XP
+                          </Heading>
+                        </GameButton>
+                      </motion.div>
+                    )}
+                  </div>
+
+                  {/* Hard Button */}
+                  <div className="flex w-full flex-col items-center justify-center -space-y-4 border-zinc-500 bg-background pt-12">
+                    <motion.div
+                      animate={{ y: [0, -10, 0] }}
+                      transition={{
+                        duration: 1.8,
+                        repeat: Infinity,
+                        ease: "easeInOut",
+                      }}
+                      className="relative z-20 mx-auto flex w-fit items-center justify-center rounded-lg border-2 border-zinc-600 bg-background px-4 py-2"
+                    >
+                      <Heading className="text-2xl uppercase text-mediumBlue sm:text-2xl">
+                        Hard
+                      </Heading>
+                    </motion.div>
+
+                    <div className="z-0 mx-auto flex w-full max-w-7xl items-center justify-center perspective-800">
+                      {/* <div className="flex w-fit items-center justify-center gap-3 rounded-2xl border-4 border-zinc-500/50 p-3 rotate-x-45"> */}
+                      <div className="flex w-fit items-center justify-center gap-3 rounded-2xl p-3 rotate-x-45">
+                        <GameButton
+                          className="w-fit"
+                          onClick={() => handleGameButton3()}
+                        >
+                          <Star
+                            className="h-10 w-10 rounded-full text-zinc-300"
+                            color="#D4D4D8"
+                          />
+                        </GameButton>
+                      </div>
+                    </div>
+
+                    {chapter3Clicked && (
+                      <motion.div
+                        initial={{ y: 40, opacity: 0 }}
+                        animate={{ y: 0, opacity: 1 }}
+                        exit={{
+                          y: -40,
+                          opacity: 0,
+                        }}
+                        transition={{ duration: 0.2 }}
+                        className="relative z-50 mx-auto flex w-80 flex-col items-start justify-start rounded-2xl bg-mediumBlue px-4 py-4 pb-5 text-left"
+                      >
+                        <Heading className="text-left text-base uppercase text-mediumBlue text-zinc-50 sm:text-lg">
+                          Let's challenge yourself
+                        </Heading>{" "}
+                        <Heading
+                          className={cn(
+                            "text-left text-sm uppercase text-mediumBlue text-zinc-200 sm:text-base",
+                            DINRoundProMedi.className,
+                          )}
+                        >
+                          Lesson 1 to 6
+                        </Heading>
+                        <GameButton
+                          className="mt-3 flex w-full items-center justify-center rounded-2xl py-2.5"
+                          onClick={() =>
+                            router.push(
+                              `/lesson/f8a9d2e1-6b3c-4f5a-9d7e-1c2b3a4f5e6d?q=1`,
+                            )
+                          }
                           variant="white"
                         >
                           <Heading

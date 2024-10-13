@@ -1,0 +1,190 @@
+[
+  {
+    "lesson": {
+      "id": "f8a9d2e1-6b3c-4f5a-9d7e-1c2b3a4f5e6d",
+      "nextLesson": "b7916886-b479-4fe8-9f3c-8a2be1376be2"
+    },
+    "questions": [
+      {
+        "question": "Which Article of the Indian Constitution allows for the suspension of Fundamental Rights during a National Emergency?",
+        "description": "This question is about the constitutional provision for suspending Fundamental Rights in emergency situations.",
+        "answers": [
+          {
+            "text": "Article 352",
+            "isCorrect": false
+          },
+          {
+            "text": "Article 356",
+            "isCorrect": false
+          },
+          {
+            "text": "Article 359",
+            "isCorrect": true
+          }
+        ]
+      },
+      {
+        "question": "The concept of judicial review in the Indian Constitution is borrowed from which country's constitution?",
+        "description": "This question is about the origin of the concept of judicial review in the Indian Constitution.",
+        "answers": [
+          {
+            "text": "USA",
+            "isCorrect": true
+          },
+          {
+            "text": "UK",
+            "isCorrect": false
+          },
+          {
+            "text": "Canada",
+            "isCorrect": false
+          }
+        ]
+      },
+      {
+        "question": "The provision for the amendment of the Indian Constitution is borrowed from which country's constitution?",
+        "description": "This question is about the origin of the constitutional amendment process in the Indian Constitution.",
+        "answers": [
+          {
+            "text": "USA",
+            "isCorrect": false
+          },
+          {
+            "text": "South Africa",
+            "isCorrect": true
+          },
+          {
+            "text": "UK",
+            "isCorrect": false
+          }
+        ]
+      },
+      {
+        "question": "Which Article of the Indian Constitution provides for the creation of All India Services?",
+        "description": "This question is about the constitutional basis for All India Services in India.",
+        "answers": [
+          {
+            "text": "Article 312",
+            "isCorrect": true
+          },
+          {
+            "text": "Article 320",
+            "isCorrect": false
+          },
+          {
+            "text": "Article 315",
+            "isCorrect": false
+          }
+        ]
+      },
+      {
+        "question": "Which Schedule of the Indian Constitution deals with the administration and control of Scheduled Areas and Scheduled Tribes?",
+        "description": "This question is about the specific Schedule that outlines the administration of Scheduled Areas and Tribes in India.",
+        "answers": [
+          {
+            "text": "Fifth Schedule",
+            "isCorrect": true
+          },
+          {
+            "text": "Sixth Schedule",
+            "isCorrect": false
+          },
+          {
+            "text": "Seventh Schedule",
+            "isCorrect": false
+          }
+        ]
+      },
+      {
+        "question": "What is the significance of the 99th Constitutional Amendment Act, 2014?",
+        "description": "This question is about a major constitutional amendment and its impact on the Indian judicial system.",
+        "answers": [
+          {
+            "text": "Introduction of National Judicial Appointments Commission (NJAC)",
+            "isCorrect": true
+          },
+          {
+            "text": "Implementation of GST",
+            "isCorrect": false
+          },
+          {
+            "text": "Right to Education",
+            "isCorrect": false
+          }
+        ]
+      },
+      {
+        "question": "Which Article in the Indian Constitution empowers the Parliament to form a new state?",
+        "description": "This question is about the constitutional provision for the formation of new states in India.",
+        "answers": [
+          {
+            "text": "Article 3",
+            "isCorrect": true
+          },
+          {
+            "text": "Article 2",
+            "isCorrect": false
+          },
+          {
+            "text": "Article 1",
+            "isCorrect": false
+          }
+        ]
+      },
+      {
+        "question": "Which Article of the Indian Constitution deals with the power of Parliament to amend the Constitution and its procedure?",
+        "description": "This question is about the specific Article that outlines the process of amending the Indian Constitution.",
+        "answers": [
+          {
+            "text": "Article 368",
+            "isCorrect": true
+          },
+          {
+            "text": "Article 370",
+            "isCorrect": false
+          },
+          {
+            "text": "Article 356",
+            "isCorrect": false
+          }
+        ]
+      },
+      {
+        "question": "What is the 'Basic Structure Doctrine' in the context of the Indian Constitution?",
+        "description": "This question is about a significant judicial principle related to constitutional amendments in India.",
+        "answers": [
+          {
+            "text": "A doctrine that limits the power of Parliament to amend certain fundamental aspects of the Constitution",
+            "isCorrect": true
+          },
+          {
+            "text": "A doctrine that allows unlimited amendments to the Constitution",
+            "isCorrect": false
+          },
+          {
+            "text": "A doctrine that prohibits any amendments to the Constitution",
+            "isCorrect": false
+          }
+        ]
+      },
+      {
+        "question": "Which Schedule of the Indian Constitution contains provisions for the administration of Tribal Areas in the states of Assam, Meghalaya, Tripura, and Mizoram?",
+        "description": "This question is about the specific Schedule that deals with the administration of certain Tribal Areas in northeastern states of India.",
+        "answers": [
+          {
+            "text": "Fifth Schedule",
+            "isCorrect": false
+          },
+          {
+            "text": "Sixth Schedule",
+            "isCorrect": true
+          },
+          {
+            "text": "Seventh Schedule",
+            "isCorrect": false
+          }
+        ]
+      }
+    ]
+  }
+]

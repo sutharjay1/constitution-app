@@ -59,7 +59,7 @@ export const appRouter = router({
     .input(z.object({ id: z.string() }))
     .query(async ({ ctx, input }) => {
       const lessonId = await db.lesson.findFirst({ where: { id: input.id } });
-
+      
       const question = await db.question.findMany({
         where: { lessonId: input.id },
         include: { answers: true },

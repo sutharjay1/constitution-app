@@ -1,0 +1,190 @@
+[
+  {
+    "lesson": {
+      "id": "cbc1dced-5cc7-49e1-b877-eae22c820ad0",
+      "nextLesson": "f8a9d2e1-6b3c-4f5a-9d7e-1c2b3a4f5e6d"
+    },
+    "questions": [
+      {
+        "question": "Which Schedule of the Indian Constitution deals with the allocation of powers between the Union and State governments?",
+        "description": "This question is about the specific Schedule that outlines the division of powers in India's federal structure.",
+        "answers": [
+          {
+            "text": "First Schedule",
+            "isCorrect": false
+          },
+          {
+            "text": "Seventh Schedule",
+            "isCorrect": true
+          },
+          {
+            "text": "Tenth Schedule",
+            "isCorrect": false
+          }
+        ]
+      },
+      {
+        "question": "Under which Article of the Constitution can President's Rule be imposed in a state?",
+        "description": "This question is about the constitutional provision for imposing President's Rule in an Indian state.",
+        "answers": [
+          {
+            "text": "Article 356",
+            "isCorrect": true
+          },
+          {
+            "text": "Article 352",
+            "isCorrect": false
+          },
+          {
+            "text": "Article 360",
+            "isCorrect": false
+          }
+        ]
+      },
+      {
+        "question": "Which Article of the Indian Constitution provides for the protection of the interests of minorities?",
+        "description": "This question is about the constitutional safeguard for minority interests in India.",
+        "answers": [
+          {
+            "text": "Article 30",
+            "isCorrect": true
+          },
+          {
+            "text": "Article 29",
+            "isCorrect": false
+          },
+          {
+            "text": "Article 31",
+            "isCorrect": false
+          }
+        ]
+      },
+      {
+        "question": "How many amendments have been made to the Indian Constitution as of now?",
+        "description": "This question is about the total number of amendments made to the Indian Constitution to date.",
+        "answers": [
+          {
+            "text": "105",
+            "isCorrect": true
+          },
+          {
+            "text": "102",
+            "isCorrect": false
+          },
+          {
+            "text": "110",
+            "isCorrect": false
+          }
+        ]
+      },
+      {
+        "question": "What is the minimum age required to become a member of the Lok Sabha?",
+        "description": "This question is about the age requirement for Lok Sabha membership in India.",
+        "answers": [
+          {
+            "text": "21 years",
+            "isCorrect": false
+          },
+          {
+            "text": "25 years",
+            "isCorrect": true
+          },
+          {
+            "text": "30 years",
+            "isCorrect": false
+          }
+        ]
+      },
+      {
+        "question": "Which Article of the Constitution provides for the establishment of the Election Commission of India?",
+        "description": "This question is about the constitutional basis for India's Election Commission.",
+        "answers": [
+          {
+            "text": "Article 324",
+            "isCorrect": true
+          },
+          {
+            "text": "Article 325",
+            "isCorrect": false
+          },
+          {
+            "text": "Article 326",
+            "isCorrect": false
+          }
+        ]
+      },
+      {
+        "question": "The concept of \"Public Interest Litigation\" (PIL) is derived from which Article of the Constitution?",
+        "description": "This question is about the constitutional basis for Public Interest Litigation in India.",
+        "answers": [
+          {
+            "text": "Article 226",
+            "isCorrect": false
+          },
+          {
+            "text": "Article 32",
+            "isCorrect": true
+          },
+          {
+            "text": "Article 21",
+            "isCorrect": false
+          }
+        ]
+      },
+      {
+        "question": "Which Article of the Indian Constitution prohibits discrimination on the grounds of religion, race, caste, sex, or place of birth?",
+        "description": "This question is about the constitutional provision against discrimination in India.",
+        "answers": [
+          {
+            "text": "Article 15",
+            "isCorrect": true
+          },
+          {
+            "text": "Article 16",
+            "isCorrect": false
+          },
+          {
+            "text": "Article 14",
+            "isCorrect": false
+          }
+        ]
+      },
+      {
+        "question": "What is the maximum number of members that can be nominated to the Rajya Sabha?",
+        "description": "This question is about the limit on nominated members in India's upper house of parliament.",
+        "answers": [
+          {
+            "text": "12",
+            "isCorrect": true
+          },
+          {
+            "text": "10",
+            "isCorrect": false
+          },
+          {
+            "text": "15",
+            "isCorrect": false
+          }
+        ]
+      },
+      {
+        "question": "Which Article of the Constitution empowers the Parliament to amend the Constitution?",
+        "description": "This question is about the constitutional provision for amending the Indian Constitution.",
+        "answers": [
+          {
+            "text": "Article 368",
+            "isCorrect": true
+          },
+          {
+            "text": "Article 369",
+            "isCorrect": false
+          },
+          {
+            "text": "Article 370",
+            "isCorrect": false
+          }
+        ]
+      }
+    ]
+  }
+]
