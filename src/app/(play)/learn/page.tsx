@@ -207,7 +207,7 @@ const Learn = () => {
                         className="relative z-50 mx-auto flex w-80 flex-col items-start justify-start rounded-2xl bg-mediumBlue px-4 py-4 pb-5 text-left"
                       >
                         <Heading className="text-left text-base uppercase text-mediumBlue text-zinc-50 sm:text-lg">
-                          Let's start with the basics
+                          Let&#39;s start with the basics
                         </Heading>{" "}
                         <Heading
                           className={cn(
@@ -282,7 +282,7 @@ const Learn = () => {
                         className="relative z-50 mx-auto flex w-80 flex-col items-start justify-start rounded-2xl bg-mediumBlue px-4 py-4 pb-5 text-left"
                       >
                         <Heading className="text-left text-base uppercase text-mediumBlue text-zinc-50 sm:text-lg">
-                          Let's increase the difficulty
+                          Let&#39;s increase the difficulty
                         </Heading>{" "}
                         <Heading
                           className={cn(
@@ -357,7 +357,7 @@ const Learn = () => {
                         className="relative z-50 mx-auto flex w-80 flex-col items-start justify-start rounded-2xl bg-mediumBlue px-4 py-4 pb-5 text-left"
                       >
                         <Heading className="text-left text-base uppercase text-mediumBlue text-zinc-50 sm:text-lg">
-                          Let's challenge yourself
+                          Let&#39;s challenge yourself
                         </Heading>{" "}
                         <Heading
                           className={cn(
